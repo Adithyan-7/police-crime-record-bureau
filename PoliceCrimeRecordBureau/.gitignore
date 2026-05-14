@@ -1,0 +1,6 @@
+Web.config
+bin/
+obj/
+*.user
+*.suo
+.vs/

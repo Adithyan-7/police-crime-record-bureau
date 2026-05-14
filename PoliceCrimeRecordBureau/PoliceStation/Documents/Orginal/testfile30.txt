@@ -1,0 +1,231 @@
+USE [PubliclyVerifiableAndEfficientFineGrained]
+GO
+/****** Object:  Table [dbo].[BitArray]    Script Date: 3/24/2025 8:29:01 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[BitArray](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[bitArray] [varchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[cloud_Credential]    Script Date: 3/24/2025 8:29:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[cloud_Credential](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[skey] [varchar](max) NULL,
+	[pkey] [varchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[FileRequest]    Script Date: 3/24/2025 8:29:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FileRequest](
+	[rid] [int] IDENTITY(1,1) NOT NULL,
+	[fid] [int] NULL,
+	[rsender] [varchar](50) NULL,
+	[rreceiver] [varchar](50) NULL,
+	[st] [int] NULL,
+	[enckey] [varchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Login]    Script Date: 3/24/2025 8:29:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Login](
+	[lid] [int] IDENTITY(1,1) NOT NULL,
+	[username] [varchar](50) NULL,
+	[password] [varchar](50) NULL,
+	[st] [int] NULL,
+	[type] [varchar](50) NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[split]    Script Date: 3/24/2025 8:29:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[split](
+	[split_id] [int] IDENTITY(1,1) NOT NULL,
+	[fileId] [int] NULL,
+	[filename] [varchar](max) NULL,
+	[splitEncPath] [varchar](max) NULL,
+	[hash] [varchar](max) NULL,
+	[hash2] [varchar](50) NULL,
+	[hash3] [varchar](50) NULL,
+	[hashSum] [varchar](50) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[upload]    Script Date: 3/24/2025 8:29:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[upload](
+	[fileid] [int] IDENTITY(1,1) NOT NULL,
+	[filename] [varchar](50) NULL,
+	[username] [varchar](max) NULL,
+	[udate] [varchar](50) NULL,
+	[idSum] [varchar](50) NULL,
+	[signature] [varchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserRegister]    Script Date: 3/24/2025 8:29:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserRegister](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NULL,
+	[email] [varchar](50) NULL,
+	[contact] [varchar](50) NULL,
+	[address] [varchar](max) NULL,
+	[pub_key] [varchar](max) NULL,
+	[skey] [varchar](max) NULL,
+	[type] [varchar](50) NULL,
+	[pic] [varchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[verification]    Script Date: 3/24/2025 8:29:02 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[verification](
+	[vid] [int] IDENTITY(1,1) NOT NULL,
+	[fname] [varchar](max) NULL,
+	[blkname] [varchar](50) NULL,
+	[hashmsg] [varchar](max) NULL,
+	[username] [varchar](max) NULL,
+	[st] [int] NULL,
+	[Verif_bit_array] [varchar](max) NULL,
+	[hash1] [varchar](50) NULL,
+	[hash2] [varchar](50) NULL,
+	[hash3] [varchar](50) NULL,
+	[new_bitarray] [varchar](max) NULL,
+	[op_type] [varchar](50) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[BitArray] ON 
+GO
+INSERT [dbo].[BitArray] ([id], [bitArray]) VALUES (1, N'0,0,0,2,0,0,0,2,1,0,
+0,0,0,0,0,0,0,0,0,0,
+0,2,0,0,0,4,2,0,0,0,
+0,0,0,4,0,0,0,0,0,0,
+0,0,0,4,1,0,0,2,0,0,
+0,0,0,0,0,2,1,4,0,0,
+0,2,2,0,0,0,2,0,4,0,
+0,0,0,2,0,0,0,0,0,2,
+0,0,2,0,0,0,0,2,2,0,2,0,0,0,0,2,0,2,0,0')
+GO
+SET IDENTITY_INSERT [dbo].[BitArray] OFF
+GO
+SET IDENTITY_INSERT [dbo].[cloud_Credential] ON 
+GO
+INSERT [dbo].[cloud_Credential] ([id], [skey], [pkey]) VALUES (3, N'6168b76e9d2833045663d03bb9ff3e157b17009744177fad88597ae9783affd0', N'324cb0eb7f525c9f999ff78284091158ac48f548b1826b00536812a6005fa83b340c2b35034662d4c1230843283d0e4afb274ec0ddced0f0c07f6c8c600fafec')
+GO
+SET IDENTITY_INSERT [dbo].[cloud_Credential] OFF
+GO
+SET IDENTITY_INSERT [dbo].[FileRequest] ON 
+GO
+INSERT [dbo].[FileRequest] ([rid], [fid], [rsender], [rreceiver], [st], [enckey]) VALUES (4, 33, N'neethus98sk@gmail.com', N'neethusanju1013@gmail.com', 1, N'Tk7mVG4fpbnMB1Q1YIM7tHP0NJEypgEEnG4odKCcZhod4aoPAngJ5cUCnhqa9VGX1SiIAVSMCa4djMA0FWaKTQgR54BBx5467BZbCAgzpl7foSPCM2WU6eEk0wz4V/6WFdamWNo8kiQqAOPZJsnZpzAtzrrj3u7vvcMmceCT6Fy9/bW8hZyJB96un6RcV8GI')
+GO
+INSERT [dbo].[FileRequest] ([rid], [fid], [rsender], [rreceiver], [st], [enckey]) VALUES (5, 34, N'neethus98sk@gmail.com', N'neethusanju1013@gmail.com', 1, N'Tk7mVG4fpbnMB1Q1YIM7tHP0NJEypgEEnG4odKCcZhod4aoPAngJ5cUCnhqa9VGX1SiIAVSMCa4djMA0FWaKTQgR54BBx5467BZbCAgzpl7foSPCM2WU6eEk0wz4V/6WFdamWNo8kiQqAOPZJsnZpzAtzrrj3u7vvcMmceCT6Fy9/bW8hZyJB96un6RcV8GI')
+GO
+SET IDENTITY_INSERT [dbo].[FileRequest] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Login] ON 
+GO
+INSERT [dbo].[Login] ([lid], [username], [password], [st], [type]) VALUES (1, N'name1@gmail.com', N'123', 0, N'User')
+GO
+INSERT [dbo].[Login] ([lid], [username], [password], [st], [type]) VALUES (2, N'admin', N'admin', 1, N'Admin')
+GO
+INSERT [dbo].[Login] ([lid], [username], [password], [st], [type]) VALUES (3, N'name2@gmail.com', N'123', 1, N'User')
+GO
+INSERT [dbo].[Login] ([lid], [username], [password], [st], [type]) VALUES (4, N'name12@gmail.com', N'000', 0, N'User')
+GO
+INSERT [dbo].[Login] ([lid], [username], [password], [st], [type]) VALUES (6, N'user45@gmail.com', N'123', 0, N'Users')
+GO
+INSERT [dbo].[Login] ([lid], [username], [password], [st], [type]) VALUES (7, N'user34@gmail.com', N'123', 0, N'Users')
+GO
+INSERT [dbo].[Login] ([lid], [username], [password], [st], [type]) VALUES (8, N'neethus98sk@gmail.com', N'123', 1, N'User')
+GO
+INSERT [dbo].[Login] ([lid], [username], [password], [st], [type]) VALUES (9, N'neethusanju1013@gmail.com', N'123', 1, N'User')
+GO
+SET IDENTITY_INSERT [dbo].[Login] OFF
+GO
+SET IDENTITY_INSERT [dbo].[split] ON 
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (271, 34, N'file008script.txt', N'~/encrypt/file008script.txt.00.txt', N'3', N'87', N'57', N'147')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (272, 34, N'file008script.txt', N'~/encrypt/file008script.txt.01.txt', N'25', N'79', N'82', N'186')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (273, 34, N'file008script.txt', N'~/encrypt/file008script.txt.02.txt', N'88', N'43', N'73', N'204')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (274, 34, N'file008script.txt', N'~/encrypt/file008script.txt.03.txt', N'43', N'7', N'97', N'147')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (275, 34, N'file008script.txt', N'~/encrypt/file008script.txt.04.txt', N'25', N'61', N'55', N'141')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (276, 34, N'file008script.txt', N'~/encrypt/file008script.txt.05.txt', N'26', N'62', N'68', N'156')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (277, 34, N'file008script.txt', N'~/encrypt/file008script.txt.06.txt', N'90', N'21', N'57', N'168')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (278, 34, N'file008script.txt', N'~/encrypt/file008script.txt.07.txt', N'68', N'47', N'95', N'210')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (279, 34, N'file008script.txt', N'~/encrypt/file008script.txt.08.txt', N'33', N'66', N'33', N'132')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (261, 33, N'file45script.txt', N'~/encrypt/file45script.txt.00.txt', N'3', N'87', N'57', N'147')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (262, 33, N'file45script.txt', N'~/encrypt/file45script.txt.01.txt', N'25', N'79', N'82', N'186')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (263, 33, N'file45script.txt', N'~/encrypt/file45script.txt.02.txt', N'88', N'43', N'73', N'204')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (264, 33, N'file45script.txt', N'~/encrypt/file45script.txt.03.txt', N'43', N'7', N'97', N'147')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (265, 33, N'file45script.txt', N'~/encrypt/file45script.txt.04.txt', N'25', N'61', N'55', N'141')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (266, 33, N'file45script.txt', N'~/encrypt/file45script.txt.05.txt', N'26', N'62', N'68', N'156')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (267, 33, N'file45script.txt', N'~/encrypt/file45script.txt.06.txt', N'90', N'21', N'57', N'168')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (268, 33, N'file45script.txt', N'~/encrypt/file45script.txt.07.txt', N'68', N'47', N'95', N'210')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (269, 33, N'file45script.txt', N'~/encrypt/file45script.txt.08.txt', N'33', N'66', N'33', N'132')
+GO
+INSERT [dbo].[split] ([split_id], [fileId], [filename], [splitEncPath], [hash], [hash2], [hash3], [hashSum]) VALUES (270, 33, N'file45script.txt', N'~/encrypt/file45script.txt.09.txt', N'8', N'56', N'44', N'108')
+GO
+SET IDENTITY_INSERT [dbo].[split] OFF
+GO
+SET IDENTITY_INSERT [dbo].[upload] ON 
+GO
+INSERT [dbo].[upload] ([fileid], [filename], [username], [udate], [idSum], [signature]) VALUES (33, N'file45script.txt', N'neethusanju1013@gmail.com', N'19-03-2025', N'509', N'0029e50d928771ccf7e8b575235413a1f407fcbe237e17bd64ef29593524e379244b589ac3268d5038fc2ed0f869e2a1a9497bbdd3894981c51ed0f6633d8ea97e')
+GO
+INSERT [dbo].[upload] ([fileid], [filename], [username], [udate], [idSum], [signature]) VALUES (34, N'file008script.txt', N'neethusanju1013@gmail.com', N'21-03-2025', N'424', N'00326fbf1afebefa6555d7dd1b5cee5e81e0e01661ef293d61d4af3e914bfdd3531056c4e42983f7366f36aa440282a2bc6a3f8a7cc81f87ce6e0e79e90035b984')
+GO
+SET IDENTITY_INSERT [dbo].[upload] OFF
+GO
+SET IDENTITY_INSERT [dbo].[UserRegister] ON 
+GO
+INSERT [dbo].[UserRegister] ([id], [Name], [email], [contact], [address], [pub_key], [skey], [type], [pic]) VALUES (1, N'Name1', N'name1@gmail.com', N'9988776655', N'Address Trivandrum', NULL, NULL, N'User', NULL)
+GO
+INSERT [dbo].[UserRegister] ([id], [Name], [email], [contact], [address], [pub_key], [skey], [type], [pic]) VALUES (2, N'Name2', N'name2@gmail.com', N'9988778899', N'address', N'c6487c9c02ceefe1b35da320bca4b660e5c9d669ec5a50ab5b87249dd93baa40aba5ec80e0c642a84936a0e38d5e640b466ac15ed57418f90ba65755b2bc07b6', N'09a8773a330f56d3193fa079d4d5fe5283d06be355b20a5ec522ab341504d0', N'User', NULL)
+GO
+INSERT [dbo].[UserRegister] ([id], [Name], [email], [contact], [address], [pub_key], [skey], [type], [pic]) VALUES (3, N'Name12', N'name12@gmail.com', N'9988778899', N'place', N'5fa8db89ecca70828dbb4620b86a0358edf2702037553995bc3771c19906fa35f8aa14f445c2390ba40e40b7412e59950f04ffa44747396b0c313b47979870b1', N'9429bd72a9cd58eb0f5011fcd36d25f1199e622f802ffa9d6fa3c2180fa34b', N'User', NULL)
+GO
+INSERT [dbo].[UserRegister] ([id], [Name], [email], [contact], [address], [pub_key], [skey], [type], [pic]) VALUES (5, N'user34', N'user34@gmail.com', N'9987876567', N'trivandrum', N'23e46ecba5e5cf6b7edcf24ddfdd9fce0f3cf65971fa79ab3655df7e1ba4dc473494e13a0716323005973e27910de5136a36952e08cdaede9d60bbc9e296c3eb', N'05d3bdcf19368ee70b422ec1be4f6da129f520446223a075f7fdf12953e99dfb', N'User', NULL)
+GO
+INSERT [dbo].[UserRegister] ([id], [Name], [email], [contact], [address], [pub_key], [skey], [type], [pic]) VALUES (6, N'Neethu', N'neethus98sk@gmail.com', N'9987876567', N'trivandrum', N'2c8b9a49ff93bf9219b6cfe4594ad698c1a2218558d36bef8c7180d3b734c7b2f2f53a420d2e94cce4daf695cd5b66f6b5d4e9e9bd3622ac79d393acc58c4958', N'17d4d19d8bacaf80ed02e42c75485adb24013da98de0ec5e9a1e02961119145a', N'User', N'~/SignIn/userpic/avatar-1.jpg')
+GO
+INSERT [dbo].[UserRegister] ([id], [Name], [email], [contact], [address], [pub_key], [skey], [type], [pic]) VALUES (7, N'akhil', N'neethusanju1013@gmail.com', N'4545323456', N'trivandrum', N'db3e1f6957984e02047a49d948509be793e7aad4fd6e67240d0db634567d2e2e0d25064357c818411d6c7bd5ca28c090b625cfcf0515172b03c63e9982e562ec', N'2f52ed471accf8b3e6881338655d28fc26e1bc96769470cd947e2c67259fb18a', N'User', N'~/SignIn/userpic/avatar-1.jpg')
+GO
+SET IDENTITY_INSERT [dbo].[UserRegister] OFF
+GO

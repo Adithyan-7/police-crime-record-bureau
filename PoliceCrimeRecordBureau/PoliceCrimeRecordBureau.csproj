@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B251034-7F84-40F4-ACFE-8EC11920D1BA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PoliceCrimeRecordBureau</RootNamespace>
+    <AssemblyName>PoliceCrimeRecordBureau</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>..\..\kalloopara projects\Sheba Ann Alex\data_outsource_full - withcloud\Bin\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3">
+      <HintPath>..\..\kalloopara projects\Sheba Ann Alex\data_outsource_full - withcloud\Bin\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\Multiple_RoleBaseAccess -Final\Bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Multiple_RoleBaseAccess -Final\Bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Multiple_RoleBaseAccess -Final\Bin\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\css\maps\style.css.map" />
+    <Content Include="Admin\css\style.css" />
+    <Content Include="Admin\fonts\material-icons\MaterialIcons-Regular.eot" />
+    <Content Include="Admin\fonts\material-icons\MaterialIcons-Regular.ttf" />
+    <Content Include="Admin\fonts\material-icons\MaterialIcons-Regular.woff" />
+    <Content Include="Admin\fonts\material-icons\MaterialIcons-Regular.woff2" />
+    <Content Include="Admin\fonts\roboto\Roboto-Bold.eot" />
+    <Content Include="Admin\fonts\roboto\Roboto-Bold.svg" />
+    <Content Include="Admin\fonts\roboto\Roboto-Bold.ttf" />
+    <Content Include="Admin\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="Admin\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="Admin\fonts\roboto\Roboto-Light.eot" />
+    <Content Include="Admin\fonts\roboto\Roboto-Light.svg" />
+    <Content Include="Admin\fonts\roboto\Roboto-Light.ttf" />
+    <Content Include="Admin\fonts\roboto\Roboto-Light.woff" />
+    <Content Include="Admin\fonts\roboto\Roboto-Light.woff2" />
+    <Content Include="Admin\fonts\roboto\Roboto-Medium.eot" />
+    <Content Include="Admin\fonts\roboto\Roboto-Medium.svg" />
+    <Content Include="Admin\fonts\roboto\Roboto-Medium.ttf" />
+    <Content Include="Admin\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="Admin\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="Admin\fonts\roboto\Roboto-Regular.eot" />
+    <Content Include="Admin\fonts\roboto\Roboto-Regular.svg" />
+    <Content Include="Admin\fonts\roboto\Roboto-Regular.ttf" />
+    <Content Include="Admin\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="Admin\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="Admin\fonts\roboto\Roboto-Thin.eot" />
+    <Content Include="Admin\fonts\roboto\Roboto-Thin.svg" />
+    <Content Include="Admin\fonts\roboto\Roboto-Thin.ttf" />
+    <Content Include="Admin\fonts\roboto\Roboto-Thin.woff" />
+    <Content Include="Admin\fonts\roboto\Roboto-Thin.woff2" />
+    <Content Include="Admin\Home.aspx" />
+    <Content Include="Admin\images\.DS_Store" />
+    <Content Include="Admin\images\cover\1-1.jpg" />
+    <Content Include="Admin\images\cover\16-9.jpg" />
+    <Content Include="Admin\images\cover\bg_profile.jpg" />
+    <Content Include="Admin\images\cover\Login_bg.jpg" />
+    <Content Include="Admin\images\cover\Login_bg2.jpg" />
+    <Content Include="Admin\images\cover\Material Admin.html" />
+    <Content Include="Admin\images\faces\face1.jpg" />
+    <Content Include="Admin\images\faces\face10.jpg" />
+    <Content Include="Admin\images\faces\face11.jpg" />
+    <Content Include="Admin\images\faces\face2.jpg" />
+    <Content Include="Admin\images\faces\face3.jpg" />
+    <Content Include="Admin\images\faces\face4.jpg" />
+    <Content Include="Admin\images\faces\face5.jpg" />
+    <Content Include="Admin\images\faces\face6.jpg" />
+    <Content Include="Admin\images\faces\face7.jpg" />
+    <Content Include="Admin\images\faces\face8.jpg" />
+    <Content Include="Admin\images\faces\face9.jpg" />
+    <Content Include="Admin\images\logo.svg" />
+    <Content Include="Admin\images\National_Crime_Records_Bureau_Logo.png" />
+    <Content Include="Admin\js\chart.js" />
+    <Content Include="Admin\js\dashboard.js" />
+    <Content Include="Admin\js\material.js" />
+    <Content Include="Admin\js\misc.js" />
+    <Content Include="Admin\Manage_CaseCategory.aspx" />
+    <Content Include="Admin\manage_DistrictAdmin.aspx" />
+    <Content Include="Admin\Request.aspx" />
+    <Content Include="Admin\ViewAllCases.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ILP.jpg" />
+    <Content Include="Content\Site - Copy.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="DistrictAdmin\css\style.css" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Bold.svg" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Light.svg" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Medium.svg" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Regular.svg" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Thin.svg" />
+    <Content Include="DistrictAdmin\images\cover\1-1.jpg" />
+    <Content Include="DistrictAdmin\images\cover\16-9.jpg" />
+    <Content Include="DistrictAdmin\images\cover\bg_profile.jpg" />
+    <Content Include="DistrictAdmin\images\cover\Login_bg.jpg" />
+    <Content Include="DistrictAdmin\images\cover\Login_bg2.jpg" />
+    <Content Include="DistrictAdmin\images\cover\Material Admin.html" />
+    <Content Include="DistrictAdmin\images\faces\face1.jpg" />
+    <Content Include="DistrictAdmin\images\faces\face10.jpg" />
+    <Content Include="DistrictAdmin\images\faces\face11.jpg" />
+    <Content Include="DistrictAdmin\images\faces\face2.jpg" />
+    <Content Include="DistrictAdmin\images\faces\face3.jpg" />
+    <Content Include="DistrictAdmin\images\faces\face4.jpg" />
+    <Content Include="DistrictAdmin\images\faces\face5.jpg" />
+    <Content Include="DistrictAdmin\images\faces\face6.jpg" />
+    <Content Include="DistrictAdmin\images\faces\face7.jpg" />
+    <Content Include="DistrictAdmin\images\faces\face8.jpg" />
+    <Content Include="DistrictAdmin\images\faces\face9.jpg" />
+    <Content Include="DistrictAdmin\images\logo.svg" />
+    <Content Include="DistrictAdmin\images\National_Crime_Records_Bureau_Logo.png" />
+    <Content Include="DistrictAdmin\Index.aspx" />
+    <Content Include="DistrictAdmin\js\chart.js" />
+    <Content Include="DistrictAdmin\js\dashboard.js" />
+    <Content Include="DistrictAdmin\js\material.js" />
+    <Content Include="DistrictAdmin\js\misc.js" />
+    <Content Include="DistrictAdmin\ManageCases.aspx" />
+    <Content Include="DistrictAdmin\ManageDistrictRequest.aspx" />
+    <Content Include="DistrictAdmin\ManageStation.aspx" />
+    <Content Include="DistrictAdmin\P_pic\Desert.jpg" />
+    <Content Include="DistrictAdmin\P_pic\download1.jpg" />
+    <Content Include="DistrictAdmin\P_pic\download23.jpg" />
+    <Content Include="DistrictAdmin\P_pic\p1.jpg" />
+    <Content Include="DistrictAdmin\P_pic\p2.jfif" />
+    <Content Include="DistrictAdmin\P_pic\p3.jfif" />
+    <Content Include="DistrictAdmin\P_pic\p4.jfif" />
+    <Content Include="DistrictAdmin\P_pic\p5.jpg" />
+    <Content Include="DistrictAdmin\P_pic\p6.jpg" />
+    <Content Include="Index\css\bootstrap.min.css" />
+    <Content Include="Index\css\fontawesome-all.min.css" />
+    <Content Include="Index\css\lightbox.css" />
+    <Content Include="Index\css\lsb.css" />
+    <Content Include="Index\css\set1.css" />
+    <Content Include="Index\css\style.css" />
+    <Content Include="Index\images\ab1.jpg" />
+    <Content Include="Index\images\ab2.jpg" />
+    <Content Include="Index\images\ab3.jpg" />
+    <Content Include="Index\images\ab4.jpg" />
+    <Content Include="Index\images\arrow.png" />
+    <Content Include="Index\images\b1.jpg" />
+    <Content Include="Index\images\b2.jpg" />
+    <Content Include="Index\images\b3.jpg" />
+    <Content Include="Index\images\bg_1.jpg" />
+    <Content Include="Index\images\bg_2.jpg" />
+    <Content Include="Index\images\bg_3.jpg" />
+    <Content Include="Index\images\bg_3.png" />
+    <Content Include="Index\images\close.png" />
+    <Content Include="Index\images\court2.jpg" />
+    <Content Include="Index\images\f1.jpg" />
+    <Content Include="Index\images\f2.jpg" />
+    <Content Include="Index\images\f3.jpg" />
+    <Content Include="Index\images\f4.jpg" />
+    <Content Include="Index\images\f5.jpg" />
+    <Content Include="Index\images\f6.jpg" />
+    <Content Include="Index\images\g1.jpg" />
+    <Content Include="Index\images\g2.jpg" />
+    <Content Include="Index\images\g3.jpg" />
+    <Content Include="Index\images\g4.jpg" />
+    <Content Include="Index\images\g5.jpg" />
+    <Content Include="Index\images\g6.jpg" />
+    <Content Include="Index\images\g7.jpg" />
+    <Content Include="Index\images\left-arrow.png" />
+    <Content Include="Index\images\next.png" />
+    <Content Include="Index\images\prev.png" />
+    <Content Include="Index\images\right-arrow.png" />
+    <Content Include="Index\images\s1.jpg" />
+    <Content Include="Index\images\s2.jpg" />
+    <Content Include="Index\images\s3.jpg" />
+    <Content Include="Index\images\s4.jpg" />
+    <Content Include="Index\images\ser1.jpg" />
+    <Content Include="Index\images\ss1.jpg" />
+    <Content Include="Index\images\t1.jpg" />
+    <Content Include="Index\images\t2.jpg" />
+    <Content Include="Index\images\t3.jpg" />
+    <Content Include="Index\images\tt1.jpg" />
+    <Content Include="Index\Index.aspx" />
+    <Content Include="Index\js\bootstrap.min.js" />
+    <Content Include="Index\js\easing.js" />
+    <Content Include="Index\js\jquery-2.2.3.min.js" />
+    <Content Include="Index\js\jquery.countup.js" />
+    <Content Include="Index\js\jquery.flexisel.js" />
+    <Content Include="Index\js\jquery.waypoints.min.js" />
+    <Content Include="Index\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Index\js\lsb.min.js" />
+    <Content Include="Index\js\move-top.js" />
+    <Content Include="Index\js\responsiveslides.min.js" />
+    <Content Include="Index\webfonts\fa-brands-400.svg" />
+    <Content Include="Index\webfonts\fa-regular-400.svg" />
+    <Content Include="Index\webfonts\fa-solid-900.svg" />
+    <Content Include="Login\css\style.css" />
+    <Content Include="Login\images\1.jpg" />
+    <Content Include="Login\images\5.png" />
+    <Content Include="Login\images\bg_1.jpg" />
+    <Content Include="Login\images\bg_2.jpg" />
+    <Content Include="Login\images\bg_3.jpg" />
+    <Content Include="Login\images\bg_3.png" />
+    <Content Include="Login\images\ghost.png" />
+    <Content Include="Login\images\National_Crime_Records_Bureau_Logo.png" />
+    <Content Include="Login\images\tic2.png" />
+    <Content Include="Login\login.aspx" />
+    <Content Include="Login\otpverification.aspx" />
+    <Content Include="PoliceStation\CaseRecords.aspx" />
+    <Content Include="PoliceStation\css\style.css" />
+    <Content Include="PoliceStation\Documents\dataset\keywords.txt" />
+    <Content Include="PoliceStation\Documents\dataset\stopwords.txt" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Bold.svg" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Light.svg" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Medium.svg" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Regular.svg" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Thin.svg" />
+    <Content Include="PoliceStation\images\caseicon.png" />
+    <Content Include="PoliceStation\images\cover\1-1.jpg" />
+    <Content Include="PoliceStation\images\cover\16-9.jpg" />
+    <Content Include="PoliceStation\images\cover\bg_profile.jpg" />
+    <Content Include="PoliceStation\images\cover\Login_bg.jpg" />
+    <Content Include="PoliceStation\images\cover\Login_bg2.jpg" />
+    <Content Include="PoliceStation\images\cover\Material Admin.html" />
+    <Content Include="PoliceStation\images\faces\face1.jpg" />
+    <Content Include="PoliceStation\images\faces\face10.jpg" />
+    <Content Include="PoliceStation\images\faces\face11.jpg" />
+    <Content Include="PoliceStation\images\faces\face2.jpg" />
+    <Content Include="PoliceStation\images\faces\face3.jpg" />
+    <Content Include="PoliceStation\images\faces\face4.jpg" />
+    <Content Include="PoliceStation\images\faces\face5.jpg" />
+    <Content Include="PoliceStation\images\faces\face6.jpg" />
+    <Content Include="PoliceStation\images\faces\face7.jpg" />
+    <Content Include="PoliceStation\images\faces\face8.jpg" />
+    <Content Include="PoliceStation\images\faces\face9.jpg" />
+    <Content Include="PoliceStation\images\logo.svg" />
+    <Content Include="PoliceStation\images\National_Crime_Records_Bureau_Logo.png" />
+    <Content Include="PoliceStation\Index.aspx" />
+    <Content Include="PoliceStation\js\chart.js" />
+    <Content Include="PoliceStation\js\dashboard.js" />
+    <Content Include="PoliceStation\js\material.js" />
+    <Content Include="PoliceStation\js\misc.js" />
+    <Content Include="PoliceStation\ManageCases.aspx" />
+    <Content Include="PoliceStation\ManageStationRequest.aspx" />
+    <Content Include="PoliceStation\RequestStatus.aspx" />
+    <Content Include="PoliceStation\SearchFile.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Manage_CaseCategory.aspx.cs">
+      <DependentUpon>Manage_CaseCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Manage_CaseCategory.aspx.designer.cs">
+      <DependentUpon>Manage_CaseCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\manage_DistrictAdmin.aspx.cs">
+      <DependentUpon>manage_DistrictAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\manage_DistrictAdmin.aspx.designer.cs">
+      <DependentUpon>manage_DistrictAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Request.aspx.cs">
+      <DependentUpon>Request.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Request.aspx.designer.cs">
+      <DependentUpon>Request.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewAllCases.aspx.cs">
+      <DependentUpon>ViewAllCases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewAllCases.aspx.designer.cs">
+      <DependentUpon>ViewAllCases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AmazoneCloud.cs" />
+    <Compile Include="BloomFilterSearching.cs" />
+    <Compile Include="cryptography.cs" />
+    <Compile Include="DbConnect.cs" />
+    <Compile Include="DistrictAdmin\AdminMasterPage.Master.cs">
+      <DependentUpon>AdminMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DistrictAdmin\AdminMasterPage.Master.designer.cs">
+      <DependentUpon>AdminMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DistrictAdmin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DistrictAdmin\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DistrictAdmin\ManageCases.aspx.cs">
+      <DependentUpon>ManageCases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DistrictAdmin\ManageCases.aspx.designer.cs">
+      <DependentUpon>ManageCases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DistrictAdmin\ManageDistrictRequest.aspx.cs">
+      <DependentUpon>ManageDistrictRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DistrictAdmin\ManageDistrictRequest.aspx.designer.cs">
+      <DependentUpon>ManageDistrictRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DistrictAdmin\ManageStation.aspx.cs">
+      <DependentUpon>ManageStation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DistrictAdmin\ManageStation.aspx.designer.cs">
+      <DependentUpon>ManageStation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndexGeneration.cs" />
+    <Compile Include="Index\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\otpverification.aspx.cs">
+      <DependentUpon>otpverification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\otpverification.aspx.designer.cs">
+      <DependentUpon>otpverification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mail.cs" />
+    <Compile Include="MatricCreation.cs" />
+    <Compile Include="PoliceStation\AdminMasterPage.Master.cs">
+      <DependentUpon>AdminMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PoliceStation\AdminMasterPage.Master.designer.cs">
+      <DependentUpon>AdminMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PoliceStation\CaseRecords.aspx.cs">
+      <DependentUpon>CaseRecords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PoliceStation\CaseRecords.aspx.designer.cs">
+      <DependentUpon>CaseRecords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PoliceStation\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PoliceStation\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PoliceStation\ManageCases.aspx.cs">
+      <DependentUpon>ManageCases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PoliceStation\ManageCases.aspx.designer.cs">
+      <DependentUpon>ManageCases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PoliceStation\ManageStationRequest.aspx.cs">
+      <DependentUpon>ManageStationRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PoliceStation\ManageStationRequest.aspx.designer.cs">
+      <DependentUpon>ManageStationRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PoliceStation\RequestStatus.aspx.cs">
+      <DependentUpon>RequestStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PoliceStation\RequestStatus.aspx.designer.cs">
+      <DependentUpon>RequestStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PoliceStation\SearchFile.aspx.cs">
+      <DependentUpon>SearchFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PoliceStation\SearchFile.aspx.designer.cs">
+      <DependentUpon>SearchFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TranpdoorGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AdminMaster.Master" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Index\webfonts\fa-brands-400.eot" />
+    <Content Include="Index\webfonts\fa-brands-400.ttf" />
+    <Content Include="Index\webfonts\fa-brands-400.woff" />
+    <Content Include="Index\webfonts\fa-brands-400.woff2" />
+    <Content Include="Index\webfonts\fa-regular-400.eot" />
+    <Content Include="Index\webfonts\fa-regular-400.ttf" />
+    <Content Include="Index\webfonts\fa-regular-400.woff" />
+    <Content Include="Index\webfonts\fa-regular-400.woff2" />
+    <Content Include="Index\webfonts\fa-solid-900.eot" />
+    <Content Include="Index\webfonts\fa-solid-900.ttf" />
+    <Content Include="Index\webfonts\fa-solid-900.woff" />
+    <Content Include="Index\webfonts\fa-solid-900.woff2" />
+    <Content Include="Login\fonts\Asap-Regular.ttf" />
+    <Content Include="Login\fonts\Audiowide-Regular.ttf" />
+    <Content Include="DistrictAdmin\css\maps\style.css.map" />
+    <Content Include="DistrictAdmin\fonts\material-icons\MaterialIcons-Regular.eot" />
+    <Content Include="DistrictAdmin\fonts\material-icons\MaterialIcons-Regular.ttf" />
+    <Content Include="DistrictAdmin\fonts\material-icons\MaterialIcons-Regular.woff" />
+    <Content Include="DistrictAdmin\fonts\material-icons\MaterialIcons-Regular.woff2" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Bold.eot" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Bold.ttf" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Light.eot" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Light.ttf" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Light.woff" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Light.woff2" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Medium.eot" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Medium.ttf" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Regular.eot" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Regular.ttf" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Thin.eot" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Thin.ttf" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Thin.woff" />
+    <Content Include="DistrictAdmin\fonts\roboto\Roboto-Thin.woff2" />
+    <Content Include="DistrictAdmin\images\.DS_Store" />
+    <Content Include="DistrictAdmin\AdminMasterPage.Master" />
+    <Content Include="PoliceStation\AdminMasterPage.Master" />
+    <Content Include="PoliceStation\css\maps\style.css.map" />
+    <Content Include="PoliceStation\fonts\material-icons\MaterialIcons-Regular.eot" />
+    <Content Include="PoliceStation\fonts\material-icons\MaterialIcons-Regular.ttf" />
+    <Content Include="PoliceStation\fonts\material-icons\MaterialIcons-Regular.woff" />
+    <Content Include="PoliceStation\fonts\material-icons\MaterialIcons-Regular.woff2" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Bold.eot" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Bold.ttf" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Light.eot" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Light.ttf" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Light.woff" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Light.woff2" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Medium.eot" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Medium.ttf" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Regular.eot" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Regular.ttf" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Thin.eot" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Thin.ttf" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Thin.woff" />
+    <Content Include="PoliceStation\fonts\roboto\Roboto-Thin.woff2" />
+    <Content Include="PoliceStation\images\.DS_Store" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PoliceStation\Documents\CulpritImage\" />
+    <Folder Include="PoliceStation\Documents\down\" />
+    <Folder Include="PoliceStation\Documents\EncryptResult\" />
+    <Folder Include="PoliceStation\Documents\Orginal\" />
+    <Folder Include="PoliceStation\Documents\Sha1\" />
+    <Folder Include="PoliceStation\Documents\StopwordRemove_Result\" />
+    <Folder Include="PoliceStation\Documents\TokenResult\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7382</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7382/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
